@@ -3,14 +3,16 @@
   <metadata>
     <id>$id$</id>
     <version>$version$</version>
-    <title>$id$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <copyright>24-7 Entertainment</copyright>
+    <authors>Konstantin Babiy and contributors</authors>
+    <title>$id$</title>
+    <licenseUrl>https://github.com/kbabiy/LogCast/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/kbabiy/LogCast</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/kbabiy/LogCast/master/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <dependencies>
       <dependency id="LogCast" version="$version$" />
     </dependencies>
+
   </metadata>
 </package>
