@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F8281FAC-0E54-4FC1-B0C1-8FB22C324B17}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LogCast.Test</RootNamespace>
+    <AssemblyName>LogCast.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BddStyle.NUnit, Version=1.0.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BddStyle.NUnit.1.0.14\lib\net45\BddStyle.NUnit.dll</HintPath>
+    </Reference>
+    <Reference Include="BddStyle.NUnit.Utilities, Version=1.0.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BddStyle.NUnit.Utilities.1.0.14\lib\net45\BddStyle.NUnit.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions, Version=5.3.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.5.3.0\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=11.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.11.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.XmlTransform, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Xdt.2.1.2\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq, Version=4.8.0.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.8.2\lib\net45\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="given_ContextSummaryBuilder\Context.cs" />
+    <Compile Include="given_ContextSummaryBuilder\given_ContextWithBranches\when_creating_concurrent_branches.cs" />
+    <Compile Include="given_ContextSummaryBuilder\when_addding_several_long_messages.cs" />
+    <Compile Include="given_ContextSummaryBuilder\when_adding_long_message.cs" />
+    <Compile Include="given_ContextSummaryBuilder\when_adding_messages_with_errors.cs" />
+    <Compile Include="given_ContextSummaryBuilder\when_adding_messages_from_different_loggers.cs" />
+    <Compile Include="given_ContextSummaryBuilder\MessageFactory.cs" />
+    <Compile Include="given_ContextSummaryBuilder\OrdinalLogMessage.cs" />
+    <Compile Include="given_ContextSummaryBuilder\when_adding_informational_messages.cs" />
+    <Compile Include="given_ContextSummaryBuilder\when_adding_message_with_null_original.cs" />
+    <Compile Include="given_CountEvent\when_not_0_and_adding_consuming_often.cs" />
+    <Compile Include="given_CountEvent\when_adding_and_decreasing_in_parallel.cs" />
+    <Compile Include="given_CountEvent\when_waiting_without_changing_counter.cs" />
+    <Compile Include="given_CountEvent\when_decreasing_withouth_add.cs" />
+    <Compile Include="given_CountEvent\Context.cs" />
+    <Compile Include="given_CountEvent\when_adding_then_decreasing.cs" />
+    <Compile Include="given_DeleteOldFilesDaily\and_ran\and_days_to_keep_files_defaulted\Context.cs" />
+    <Compile Include="given_DeleteOldFilesDaily\and_ran\and_days_to_keep_files_defaulted\when_file_dates_varied.cs" />
+    <Compile Include="given_DeleteOldFilesDaily\and_ran\and_files_func_throws_exception\when_ran.cs" />
+    <Compile Include="given_DeleteOldFilesDaily\and_ran\and_get_date_func_throws_exception\when_ran.cs" />
+    <Compile Include="given_DeleteOldFilesDaily\and_ran\and_no_files_returned\Context.cs" />
+    <Compile Include="given_DeleteOldFilesDaily\and_ran\when_ran_twice.cs" />
+    <Compile Include="given_DeleteOldFilesDaily\and_ran\Context.cs" />
+    <Compile Include="given_DeleteOldFilesDaily\and_ran\and_no_files_returned\when_ran_twice.cs" />
+    <Compile Include="given_DeleteOldFilesDaily\and_ran\and_no_files_returned\when_ran.cs" />
+    <Compile Include="given_DeleteOldFilesDaily\and_ran\when_ran.cs" />
+    <Compile Include="given_DeleteOldFilesDaily\and_ran\and_days_to_keep_files_defaulted\when_ran.cs" />
+    <Compile Include="given_DeleteOldFilesDaily\Context.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\and_context_returned_from_long_running_thread\when_nested_context_and_returned.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\and_emtpy_context_processing_suppressed\Context.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\and_emtpy_context_processing_suppressed\when_completing_without_logs.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\and_emtpy_context_processing_suppressed\when_completing_with_branch_set.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\and_context_returned_from_long_running_thread\when_returned.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\and_context_returned_from_long_running_thread\Context.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\and_triple_running_elapsed_loggers\Context.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\and_triple_running_elapsed_loggers\when_logging_with_all_durations_elapsed_logger.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\and_triple_running_elapsed_loggers\when_logging_with_composite_elapsed_logger.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\when_logging_exception.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\when_logging_without_completion.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\when_logging_with_correlation_id_null.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\when_logging_with_existing_field_overriden_twice.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\Context.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\when_completing_without_logs.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\when_logging.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\when_logging_50_times.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\when_logging_in_separate_thread_after_complete.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\when_logging_two_times.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\when_logging_two_times_advanced.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\when_logging_with_correlation_id_update.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\when_logging_with_custom_attribute.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\when_logging_with_custom_attribute_default_value.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\when_logging_with_existing_field_overridden.cs" />
+    <Compile Include="given_DirectLogger_configuration\when_loading_from_config.cs" />
+    <Compile Include="given_DirectLogger_configuration\when_logging_empty_string.cs" />
+    <Compile Include="given_DirectLogger_configuration\when_logging_from_different_threads.cs" />
+    <Compile Include="given_DirectLogger_configuration\when_logging_null.cs" />
+    <Compile Include="given_DirectLogger_configuration\Context.cs" />
+    <Compile Include="given_DirectLogger_configuration\when_logging_string.cs" />
+    <Compile Include="given_DirectLogger_configuration\when_logging_string_with_exception.cs" />
+    <Compile Include="given_DirectLogger_configuration\and_context_id_enabled\when_logging_with_complex_custom_attribute.cs" />
+    <Compile Include="given_DirectLogger_configuration\when_running_flush.cs" />
+    <Compile Include="given_DurationsSumElapsedLogger\and_context_does_not_exist\when_disposing.cs" />
+    <Compile Include="given_DurationsSumElapsedLogger\and_context_exisits\and_logger_was_disposed\when_disposing.cs" />
+    <Compile Include="given_DurationsSumElapsedLogger\and_context_exisits\and_there_is_value\when_creating_and_disposing.cs" />
+    <Compile Include="given_DurationsSumElapsedLogger\and_context_exisits\Context.cs" />
+    <Compile Include="given_DurationsSumElapsedLogger\and_context_exisits\when_creating_and_disposing.cs" />
+    <Compile Include="given_FileFallbackLogger\and_writing\and_message_contains_illegal_symbols\when_ran.cs" />
+    <Compile Include="given_FileFallbackLogger\and_writing\when_cleanup_returns_exceptions.cs" />
+    <Compile Include="given_FileFallbackLogger\and_writing\Context.cs" />
+    <Compile Include="given_FileFallbackLogger\when_getting_log_file_date.cs" />
+    <Compile Include="given_FileFallbackLogger\when_writing_with_exception.cs" />
+    <Compile Include="given_FileFallbackLogger\and_writing\when_ran.cs" />
+    <Compile Include="given_FileFallbackLogger\Context.cs" />
+    <Compile Include="given_FileFallbackLogger\when_instantiating.cs" />
+    <Compile Include="given_FileFallbackLogger\when_writing_to_inaccessible_file.cs" />
+    <Compile Include="given_ElapsedLogger\and_it_was_disposed\when_disposing.cs" />
+    <Compile Include="given_ElapsedLogger\when_creating_and_disposing.cs" />
+    <Compile Include="given_LogConfig\Context.cs" />
+    <Compile Include="given_LogConfig\when_using_inspectors.cs" />
+    <Compile Include="given_LogConfig\when_using_fluid_configuration_without_end.cs" />
+    <Compile Include="given_LogConfig\when_using_fluid_configuration.cs" />
+    <Compile Include="given_LogConfig\when_using_fluid_configuration_with_lazy_init.cs" />
+    <Compile Include="given_LogConfig\when_using_configuration_without_engine.cs" />
+    <Compile Include="given_LogConfig\when_using_minimal_configuration.cs" />
+    <Compile Include="given_LogConfig\when_not_configured.cs" />
+    <Compile Include="given_LogManager\when_getting_logger.cs" />
+    <Compile Include="given_ComplexLogProperty\when_creating_with_default_name.cs" />
+    <Compile Include="given_LogsDice\when_rolling.cs" />
+    <Compile Include="given_LogsDice\when_instantiating.cs" />
+    <Compile Include="given_LogCastClient\given_send_mocked\and_message_sent\and_document_factory_mocked\when_seding_message.cs" />
+    <Compile Include="given_LogCastClient\given_send_mocked\and_message_sent\and_ConsumeDocument_fails_on_send\when_second_message_passes.cs" />
+    <Compile Include="given_LogCastClient\given_send_mocked\and_message_sent\and_ConsumeDocument_fails_on_send\when_sending.cs" />
+    <Compile Include="given_LogCastClient\given_send_mocked\and_message_sent\and_ConsumeDocument_fails_on_send\Context.cs" />
+    <Compile Include="given_LogCastClient\given_send_mocked\and_message_sent\and_send_fails\when_short_timeout_set_and_failing_all_but_last_two_with_one_consumer_thread.cs" />
+    <Compile Include="given_Extensions\when_inserting_between_elements.cs" />
+    <Compile Include="given_LogCastClient\given_send_mocked\and_message_sent\when_self_diagnostics_enabled.cs" />
+    <Compile Include="given_LogCastContextBranch\Context.cs" />
+    <Compile Include="given_LogCastContextBranch\when_creating_nested_branches.cs" />
+    <Compile Include="given_LogCastContextBranch\when_creating.cs" />
+    <Compile Include="given_LogCastContextBranch\when_creating_out_of_context.cs" />
+    <Compile Include="given_LogCastContext\when_creating_with_operation_name.cs" />
+    <Compile Include="given_LogCastContext\when_creating_with_correlation_id.cs" />
+    <Compile Include="given_LogCastContext\Context.cs" />
+    <Compile Include="given_LogCastContext\when_creating_nested.cs" />
+    <Compile Include="given_LogCastDocument\given_document_with_fields\containing_complex_object\when_converting_to_json_string.cs" />
+    <Compile Include="given_LogCastDocument\given_document_with_fields\containing_complex_object_with_attributes\when_converting_to_json_string.cs" />
+    <Compile Include="given_LogCastDocument\given_document_with_fields\containing_dots\when_converting_to_json.cs" />
+    <Compile Include="given_LogCastDocument\given_document_with_fields\containing_root_field\when_converting_to_json_string.cs" />
+    <Compile Include="given_LogCastDocument\given_document_with_fields\when_getting_non_primitive_field.cs" />
+    <Compile Include="given_LogCastDocument\given_document_with_fields\when_setting_default_value.cs" />
+    <Compile Include="given_LogCastDocument\given_document_with_fields\containing_carriage_return\when_converting_to_json_string.cs" />
+    <Compile Include="given_LogCastDocument\given_document_with_fields\containing_new_line\when_converting_to_json_string.cs" />
+    <Compile Include="given_LogCastDocument\given_document_with_fields\containing_quote\when_converting_to_json_string.cs" />
+    <Compile Include="given_LogCastDocument\given_document_with_fields\containing_slash\when_converting_to_json_string.cs" />
+    <Compile Include="given_LogCastDocument\given_document_with_fields\containing_tab\when_converting_to_json_string.cs" />
+    <Compile Include="given_LogCastDocument\given_document_with_fields\Context.cs" />
+    <Compile Include="given_LogCastDocument\given_document_with_fields\when_converting_to_json_string.cs" />
+    <Compile Include="given_LogCastDocument\given_document_with_fields\when_getting_existing_field.cs" />
+    <Compile Include="given_LogCastDocument\given_document_with_fields\when_getting_unexisting_field.cs" />
+    <Compile Include="given_LogCastDocument\given_type\when_getting_object_from_int_set.cs" />
+    <Compile Include="given_LogCastDocument\given_type\when_instantiating.cs" />
+    <Compile Include="given_LogCastClient\given_options\when_creating_with_default_values.cs" />
+    <Compile Include="given_LogCastClient\given_send_mocked\and_message_sent\and_send_fails\when_too_many_messages.cs" />
+    <Compile Include="given_LogCastClient\given_send_mocked\and_message_sent\and_send_fails\when_long_retry_timeout_set_in_options.cs" />
+    <Compile Include="given_LogCastClient\given_send_mocked\and_message_sent\and_send_fails\when_short_timeout_set_in_options.cs" />
+    <Compile Include="given_LogCastClient\given_send_mocked\and_message_sent\and_send_fails\Context.cs" />
+    <Compile Include="given_LogCastClient\given_send_mocked\and_message_sent\Context.cs" />
+    <Compile Include="given_LogCastClient\given_send_mocked\and_message_sent\when_options_are_specified.cs" />
+    <Compile Include="given_LogCastClient\given_send_mocked\and_message_sent\when_options_are_default.cs" />
+    <Compile Include="given_LogCastClient\given_send_mocked\when_sending_message.cs" />
+    <Compile Include="given_LogCastClient\given_send_mocked\Context.cs" />
+    <Compile Include="given_PropertyAccumulator_when_applied\with_adding_complex_properties.cs" />
+    <Compile Include="LogCastClientFactoryMock.cs" />
+    <Compile Include="LogCastClientMock.cs" />
+    <Compile Include="given_LogCastContext\when_creating_with_all_parameters_set_default.cs" />
+    <Compile Include="given_PropertyAccumulator_when_applied\ComplexValue.cs" />
+    <Compile Include="given_PropertyAccumulator_when_applied\Context.cs" />
+    <Compile Include="given_PropertyAccumulator_when_applied\with_adding_duplicate_properties_with_aggregators.cs" />
+    <Compile Include="given_PropertyAccumulator_when_applied\with_adding_duplicate_properties.cs" />
+    <Compile Include="given_PropertyAccumulator_when_applied\with_adding_unique_properties_with_aggregators.cs" />
+    <Compile Include="given_PropertyAccumulator_when_applied\with_adding_unique_properties.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="given_LogCastClient\given_type\when_creating.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LogCast\LogCast.csproj">
+      <Project>{BC096A56-DAE3-45BF-968B-94C9FBDE18FD}</Project>
+      <Name>LogCast</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="given_DirectLogger_configuration\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

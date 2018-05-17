@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BC096A56-DAE3-45BF-968B-94C9FBDE18FD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LogCast</RootNamespace>
+    <AssemblyName>LogCast</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Debug\LogCast.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Release\LogCast.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JetBrains.Annotations, Version=11.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.11.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Tasks.v4.0" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\EmptyConfig\EmptyLogger.cs" />
+    <Compile Include="Config\EmptyConfig\EmptyLogManager.cs" />
+    <Compile Include="Config\EmptyConfig\EmptyLogCastEngine.cs" />
+    <Compile Include="Config\LogConfigSetup.cs" />
+    <Compile Include="Context\ContextContainer.cs" />
+    <Compile Include="Context\ContextPropertiesCollection.cs" />
+    <Compile Include="Context\Context.cs" />
+    <Compile Include="Context\CallContextStrategy.cs" />
+    <Compile Include="Context\ContextStrategy.cs" />
+    <Compile Include="CorrelationIdHeader.cs" />
+    <Compile Include="CorrelationState.cs" />
+    <Compile Include="Data\ComplexLogProperty.cs" />
+    <Compile Include="Delivery\LogCastClientFactory.cs" />
+    <Compile Include="Delivery\LogCastMessageFactory.cs" />
+    <Compile Include="Engine\ContextSummary.cs" />
+    <Compile Include="Engine\ContextSummaryBuilder.cs" />
+    <Compile Include="Engine\DotEscapeContractResolver.cs" />
+    <Compile Include="Engine\ExceptionSummary.cs" />
+    <Compile Include="Engine\ILogCastEngineFactory.cs" />
+    <Compile Include="Engine\LogMessageRouter.cs" />
+    <Compile Include="Engine\LogCastDocument.cs" />
+    <Compile Include="Engine\LogCastDocumentFactory.cs" />
+    <Compile Include="Engine\LogCastEngineFactory.cs" />
+    <Compile Include="Engine\PropertyAccumulator.cs" />
+    <Compile Include="Fallback\DeleteOldFilesDaily.cs" />
+    <Compile Include="Fallback\IDeleteOldFiles.cs" />
+    <Compile Include="IContextTime.cs" />
+    <Compile Include="Inspectors\ConfigurationInspector.cs" />
+    <Compile Include="Inspectors\EnvironmentInspector.cs" />
+    <Compile Include="Context\ContextDataCollection.cs" />
+    <Compile Include="Delivery\ILogCastClient.cs" />
+    <Compile Include="Delivery\ILogCastClientFactory.cs" />
+    <Compile Include="Delivery\LogCastClient.cs" />
+    <Compile Include="Delivery\LogCastOptions.cs" />
+    <Compile Include="Engine\ILogCastEngine.cs" />
+    <Compile Include="Context\LogCastBranchData.cs" />
+    <Compile Include="Engine\LogCastEngine.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Fallback\FileFallbackLogger.cs" />
+    <Compile Include="Fallback\IFallbackLogger.cs" />
+    <Compile Include="LogConfig.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Loggers\Direct\ConfigurationSection.cs" />
+    <Compile Include="Loggers\Direct\DirectLogger.cs" />
+    <Compile Include="Loggers\Direct\DirectLoggerBridge.cs" />
+    <Compile Include="Loggers\Direct\DirectLoggerOptions.cs" />
+    <Compile Include="Loggers\Direct\DirectLogManager.cs" />
+    <Compile Include="Loggers\Elapsed\AllDurationsElapsedLogger.cs" />
+    <Compile Include="Loggers\Elapsed\DurationsAverageElapsedLogger.cs" />
+    <Compile Include="Loggers\Elapsed\DurationsElapsedLogger.cs" />
+    <Compile Include="Loggers\Elapsed\DurationsMaxElapsedLogger.cs" />
+    <Compile Include="Loggers\Elapsed\DurationsSumElapsedLogger.cs" />
+    <Compile Include="Loggers\Elapsed\ElapsedLoggerBase.cs" />
+    <Compile Include="Loggers\Elapsed\ElapsedLogger.cs" />
+    <Compile Include="Loggers\ILoggerBridge.cs" />
+    <Compile Include="Loggers\ILogManager.cs" />
+    <Compile Include="LogManager.cs" />
+    <Compile Include="Data\LogProperty.cs" />
+    <Compile Include="Inspectors\ILogDispatchInspector.cs" />
+    <Compile Include="Property.cs" />
+    <Compile Include="Rendering\DetailsFormatter.cs" />
+    <Compile Include="Rendering\IDetailsFormatter.cs" />
+    <Compile Include="Rendering\MessageLayout.cs" />
+    <Compile Include="Extensions\JsonExtensions.cs" />
+    <Compile Include="Utilities\EnvironmentContext.cs" />
+    <Compile Include="Utilities\WinLoseDice.cs" />
+    <Compile Include="Utilities\CountEvent.cs" />
+    <Compile Include="LogCastContextBranch.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="LogLevel.cs" />
+    <Compile Include="LogCastContext.cs" />
+    <Compile Include="LogMessage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\FormatHelper.cs" />
+    <Compile Include="Utilities\TimedWebClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogCast.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

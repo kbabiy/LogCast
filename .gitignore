@@ -1,0 +1,15 @@
+/.vs
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+packages/
+
+*.suo
+*.user
+*.sln.docstates
+
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+*NCrunch*
