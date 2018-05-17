@@ -3,11 +3,11 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("LogCast")]
-[assembly: AssemblyDescription("LogCast logging common assembly")]
+[assembly: AssemblyDescription("LogCast - library to declaratively compose logs, enrich them with valuable statistics and send to centralize storage")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("24-7 Entertainment")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("LogCast")]
-[assembly: AssemblyCopyright("Copyright 24-7 Entertainment 2016")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -18,5 +18,5 @@ using System.Runtime.InteropServices;
 [assembly: InternalsVisibleTo("LogCast.Tracing.Test")]
 [assembly: InternalsVisibleTo("LogCast.HttpClient.Test")]
 
-[assembly: AssemblyVersion("8.2.0")]
-[assembly: AssemblyFileVersion("8.2.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

@@ -21,4 +21,4 @@ test:
 deploy:
 - provider: NuGet
   api_key:
-    secure: TODO
+    secure: 8GQgV2DHU3qdilEMg9OZqXx6RfeZUVWjsbXgj1b8xP4lqY4Xrn4fY/wMriMI7HN0

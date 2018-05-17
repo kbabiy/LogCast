@@ -6,8 +6,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("LogCast.NLog")]
 [assembly: AssemblyDescription("NLog appender to send logs through LogCast")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("24-7 Entertainment")]
-[assembly: AssemblyCopyright("Copyright 24-7 Entertainment 2016")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -15,5 +15,5 @@ using System.Runtime.InteropServices;
 [assembly: Guid("9048f6d9-2e9d-435c-a53d-5d8351ef3318")]
 [assembly: InternalsVisibleTo("LogCast.NLog.Test")]
 
-[assembly: AssemblyVersion("8.2.0")]
-[assembly: AssemblyFileVersion("8.2.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

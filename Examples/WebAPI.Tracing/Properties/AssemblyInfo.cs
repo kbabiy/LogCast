@@ -1,17 +1,17 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("WebAPI.Tracing")]
+[assembly: AssemblyTitle("Examples.WebAPI.Tracing")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("24-7 Entertainment")]
-[assembly: AssemblyProduct("WebAPI.Tracing")]
-[assembly: AssemblyCopyright("Copyright 24-7 Entertainment 2016")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("Examples.WebAPI.Tracing")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 [assembly: ComVisible(false)]
 [assembly: Guid("51f35080-956a-41aa-97f6-de8bd964fb93")]
 
-[assembly: AssemblyVersion("8.2.0")]
-[assembly: AssemblyFileVersion("8.2.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
