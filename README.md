@@ -479,8 +479,8 @@ but operation context async flow is now disabled by default. To enable it (and u
 For case of standalone configuration or when selected logging framework doesn't support the fallback logging mechanism, file fallback logger 
 is provided
 
-In order to enable this functionality use 'FallbackLogDirectory' option when configuring your loggin setup. This can be rooted directory or not.
-In case relative path is used as an input parameter it is being rooted to '{Path.GetTempPath()}\LogCastTemp'
+In order to enable this functionality use 'FallbackLogDirectory' option when configuring your logging setup. This can be both absolute or relative director path.
+In case relative path is used it is being rooted to '{Path.GetTempPath()}\LogCastTemp'
 
 Base directory of an applicaion is not used in order to avoid unexpected side effects on the client application
 
@@ -656,26 +656,9 @@ This behavior can be changed with next setting:
 LogCastContext.Current.SuppressEmtpyContextMessages = true
 ```
 
-## Urls
-
-- [TeamCity](http://teamcity.247ms.com/viewType.html?buildTypeId=NSearch_CommonLogging)
-- [NuGet for basic solution](http://nuget.247ms.com/packages/LogCast)
-	- [Domain specific logic](http://nuget.247ms.com/packages/LogCast.Domain)
-	- [Http specific dependencies](http://nuget.247ms.com/packages/LogCast.Http)
-	- [WebApi integration](http://nuget.247ms.com/packages/LogCast.WebApi)
-	- [WCF integration](http://nuget.247ms.com/packages/LogCast.Wcf)
-	- [MVC integration](http://nuget.247ms.com/packages/LogCast.Mvc)
-	- [NLog integration](http://nuget.247ms.com/packages/LogCast.NLog)
-	- [Tracing integration](http://nuget.247ms.com/packages/LogCast.Tracing)
-	- [Logging Mongo client](http://nuget.247ms.com/packages/LogCast.Mongo)
-	- [Logging HttpClient DelegatingHandler](http://nuget.247ms.com/packages/LogCast.HttpClient)
-- [Kibana in production](http://kibana.247e.com/)
-	- [Test](http://kibana.test.247ms.com/)
-	- [Dev](http://kibana.dev.247ms.com/)
-
 ## Authors
 
-- **Kirill Medvedev** - former 24-7 Entertainment employee who originally introduced given approach and started the project
-- **Konstantin Babiy** - contributing with polishing and improvements
-- **Vladyslav Novgorodov** - former 24-7 Entertainment employee who made major contribution into solution redesign improving design and extensibility
-- **24-7 backend team** - contributing team mates from all our backend teams
+- **Konstantin Babiy** - main contributor and current  owner
+- **Kirill Medvedev** - originally introduced the idea and started the project
+- **Vladyslav Novgorodov** - former colleague who applied major redesign contribing into improving solution design and extensibility
+- **7Digital backend team** - contributing teammates
