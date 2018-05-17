@@ -459,11 +459,11 @@ handles both standalone and UoW-composed messages and lets apply application spe
 
 Readymade inspectors available are: 
 
-- [ConfigurationInspector.cs](LogCast\Inspectors\ConfigurationInspector.cs) - used in the library to apply logging framework specific values
-- [EnvironmentInspector.cs](LogCast\Inspectors\EnvironmentInspector.cs) - used in the library to apply application environment values
-- [HttpContextInspector](LogCast.Http\HttpContextInspector.cs) - available to apply values from the 'HttpContext.Current'. Can be used to add http-specific 
+- [ConfigurationInspector.cs](LogCast/Inspectors/ConfigurationInspector.cs) - used in the library to apply logging framework specific values
+- [EnvironmentInspector.cs](LogCast/Inspectors/EnvironmentInspector.cs) - used in the library to apply application environment values
+- [HttpContextInspector](LogCast.Http/HttpContextInspector.cs) - available to apply values from the 'HttpContext.Current'. Can be used to add http-specific 
 attributes with the basic setup (without handlers/interceptors)
-- [OperationContextInspector](LogCast.Wcf\OperationContextInspector.cs) - available to apply values from the 'OperationContext.Current'. Can be used to add WCF-specific 
+- [OperationContextInspector](LogCast.Wcf/OperationContextInspector.cs) - available to apply values from the 'OperationContext.Current'. Can be used to add WCF-specific 
 attributes with the basic setup (without handlers/interceptors)
 NOTE: there is a known .Net framework issue when within the async WCF service OperationContext.Current becomes null after the first async call. This has been fixed with .Net framework 4.6.2,
 but operation context async flow is now disabled by default. To enable it (and use functionality fixed in 4.6.2) you need to set a flag in your app.config like:
