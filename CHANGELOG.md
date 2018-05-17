@@ -1,2 +1,14 @@
 ## 1.0.0
-- 
+- Basic library with core LogCastContext functionality
+- Http context integration
+- Integrations
+	- Logging approaches
+		- Direct logger
+		- Tracing
+		- NLog
+	- Frameworks
+		- WebApi
+		- WCF
+		- MVC
+		- Owin
+- Set of example projects

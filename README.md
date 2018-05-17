@@ -10,7 +10,7 @@ Problems the library is solving:
 	- Similar attributes structure and names
 	- Same atrribute values when applicable (for example: log level values regardless of the logging framework)
 	- Simple extensibility of standard log contents with application specific attributes
-- Unit of Work (UoW): composing multiple application log calls into one log message by context
+- Unit of Work (UoW): composing multiple application log calls into one message by context
 - Minimum effort and logging related code on the client side
 	- Minimalistic and declarative API
 	- As much stats/metrics gathered automatically as possible
@@ -20,7 +20,7 @@ Problems the library is solving:
 		- Configured parameters of resources consumed by the subsystem
 	- Reliable delivery
 - Plugging to existing logging frameworks as well as standalone setup
-- More: multithreaded scenarios, readymade message handlers, fallback logging, nested contexts, log sending tweaks, extensibility etc.
+- More: multithreaded scenarios, readymade message handlers, fallback logging, nested contexts, log sending tweaks, extensibility, throttling etc.
 
 ------
 
@@ -28,9 +28,9 @@ Problems the library is solving:
 
 Example solutions are available to see the basic setup
 
-- [Examples.DirectLog](Examples.DirectLogger)
-- [Examples.NLog](Examples.NLog)
-- [Examples.Tracing](Examples.Tracing)
+- [Examples.DirectLog](Examples/DirectLogger)
+- [Examples.NLog](Examples/NLog)
+- [Examples.Tracing](Examples/Tracing)
 
 The easy way to start is picking one of those and implement your code the same way. Most of the times the trivial setup should do what you need
 
