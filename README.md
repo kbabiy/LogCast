@@ -24,7 +24,7 @@ Problems the library is solving:
 
 ------
 
-## How to start
+## Quick start
 
 Example solutions are available to see the basic setup
 
@@ -81,7 +81,7 @@ LogConfig.Configure(
 LogConfig.Configure(new DirectLogManager());
 ```
 
-And the config itself: [App.config](Examples.DirectLogger/App.config)
+And the config itself: [App.config](Examples/DirectLogger/App.config)
 
 ### Log
 
@@ -120,7 +120,7 @@ Using UoW is not required, but is recommended in most server side cases. Besides
 logs overview it also gathers statistics from analyzing log entry set in a single context - such as timings information 
 (see below for more stats details)
 
-'correlation_id' is an optional parameter to identify certain call. This is especially useful to join related calls of a 
+'correlation_id' is an optional parameter to identify certain call. This is especially useful to join related calls of 
 several different systems
 
 LogCastContext supports nested usage. In such setup nested context is treated as standalone UoW, and its content is taken away of 
@@ -128,44 +128,44 @@ the parent context
 
 ### Results
 
-Query for your entry in Kibana by the value of SystemType in the @type field, or by the value of correlation_id in the @fields.correlation_id field.
-With the simplest setup code from the basic usage scenario will send next message to LogCast:
+Query for your entry in the dashboard of the log system you use (such as ELK.Kibana) by the value of SystemType in the 'type' field, or by the value of correlation_id in the fields.correlation_id.
+With the simplest setup code from the basic usage scenario will send next message:
 
 ```
-"@timestamp": "2016-10-28T14:41:54.6379703+03:00",
-"@message": "error",
-"@type": "Examples",
-"@source": "Direct",
-"@fields": {
-    "correlation_id": "direct log example call",
-    "operation": "Operation",
-    "log_level": "Error",
-	"log_level_code": 21,
-    "details": 
-		"(24) ----------
-		02-41-54.662 PM | Info | Program | info
-		(18) ----------
-		02-41-54.681 PM | Warn | Program | warn
-		(20) ----------
-		02-41-54.701 PM | Error | Program | error
-		(58) ----------",
-    "durations": {
-		"value": [24,18,20,58],
-		"total": 129
-    },
-    "logger": ["Program"],
-    "host": {
-		"name": "LT-214809",
-		"ip": ["10.0.48.57"]
-    },
-    "application_version": "1.0.0.0",
-    "logs": {
-		"length": 607
-    }
+{
+	"timestamp": "2016-10-28T14:41:54.6379703+03:00",
+	"message": "error",
+	"type": "Examples",
+	"source": "Direct",
+	"fields": {
+		"correlation_id": "direct log example call",
+		"operation": "Operation",
+		"log_level": "Error",
+		"log_level_code": 21,
+		"details": 
+			"(24) ----------
+			02-41-54.662 PM | Info | Program | info
+			(18) ----------
+			02-41-54.681 PM | Warn | Program | warn
+			(20) ----------
+			02-41-54.701 PM | Error | Program | error
+			(58) ----------",
+		"durations": {
+			"value": [24,18,20,58],
+			"total": 129
+		},
+		"logger": ["Program"],
+		"host": {
+			"name": "LT-214809",
+			"ip": ["10.0.48.57"]
+		},
+		"application_version": "1.0.0.0",
+		"logs": {
+			"length": 607
+		}
+	}
 }
 ```
-
-Statistics are explained in the [Logging fields convention](https://confluence.247e.com/pages/viewpage.action?spaceKey=TLG&title=Logging+Fields)
 
 ------
 
