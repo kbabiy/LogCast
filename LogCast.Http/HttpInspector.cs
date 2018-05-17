@@ -11,6 +11,7 @@ using JetBrains.Annotations;
 
 namespace LogCast.Http
 {
+    [UsedImplicitly(ImplicitUseTargetFlags.Members)]
     public class HttpInspector
     {
         public LoggingOptions Options { get; }

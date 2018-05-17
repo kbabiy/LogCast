@@ -2,7 +2,7 @@
 using JetBrains.Annotations;
 using Microsoft.AspNetCore.Hosting;
 
-namespace AspNetCoreService.Tracing
+namespace Examples.AspNetCoreService.Tracing
 {
     [UsedImplicitly]
     public class Program

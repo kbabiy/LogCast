@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using LogCast;
 
-namespace AspNetCoreService.Tracing.Models
+namespace Examples.AspNetCoreService.Tracing.Models
 {
     public class ValuesRepository
     {

@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using AspNetCoreService.Tracing.Models;
+using Examples.AspNetCoreService.Tracing.Models;
 using LogCast;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AspNetCoreService.Tracing.Controllers
+namespace Examples.AspNetCoreService.Tracing.Controllers
 {
     [Route("api/[controller]")]
     [SuppressMessage("ReSharper", "UnusedParameter.Global")]
