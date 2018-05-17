@@ -10,7 +10,7 @@ All the logging complexity is handled in the library, and client is only made to
 
 ## Running
 
-Clone out the repo, fire up with Visual Studio 2017, and run all the tests
+Clone out the repo, fire up with Visual Studio, and run all the tests
 
 When working on the feature use this checklist:
 * Implemented change
