@@ -270,8 +270,8 @@ Log.AddContextProperty("durations", "storage.total", 30, total);
 
 ## Handling context with message handlers
 
-Basic approach proposed above suggests LogCastContext creation in the application code. This provides simpler code, 
-but is not the only option available for services
+Basic approach proposed above suggests LogCastContext creation in the application code. Even though it is simple and straightforward, 
+it is not the only approach available for services
 
 In service code basic approach has certain properties that can be seen as disadvantages:
 
@@ -337,68 +337,70 @@ public IHttpActionResult GetItem(int id)
 - Result for the default configuration can look like
 
 ```
-"@timestamp": "2017-04-14T13:14:25.1575926+03:00",
-"@message": "Finished",
-"@type": "Examples.WebApi",
-"@source": "Trace",
-"@fields": {
-  "correlation_id": "webapi_call_correlationId",
-  "operation": "{controller}/{id}",
-  "log_level": "Info",
-  "log_level_code": 3,
-    "details": 
-        "(97) ----------
-        01-53-15.135 PM | Info | StoreController | Starting with id1
-        (3) ----------
-        01-53-15.138 PM | Info | StoreController | Finished
-        ( 36) ----------",
-  "durations": {
-		"value": [97, 3, 36],
-		"total": 143
-  },
-  "logger": ["StoreController"],
-  "http": {
-	"request": {
-	  "uri": "http://localhost:61523/store/1",
-	  "http_method": "GET",
-	  "headers": {
-		"connection": ["keep-alive"],
-		"accept": ["text/html","application/xhtml+xml","application/xml; q=0.9","image/webp","*/*; q=0.8"],
-		"accept-encoding": ["gzip","deflate","sdch","br"],
-		"accept-language": ["ru-RU","ru; q=0.8","en-US; q=0.6","en; q=0.4","uk; q=0.2"],
-		"host": ["localhost:61523"],
-		"user-agent": ["Mozilla/5.0","(Windows NT 10.0; WOW64)","AppleWebKit/537.36","(KHTML, like Gecko)","Chrome/57.0.2987.133","Safari/537.36"],
-		"upgrade-insecure-requests": ["1"]
+{
+	"timestamp": "2017-04-14T13:14:25.1575926+03:00",
+	"message": "Finished",
+	"type": "Examples.WebApi",
+	"source": "Trace",
+	"fields": {
+	  "correlation_id": "webapi_call_correlationId",
+	  "operation": "{controller}/{id}",
+	  "log_level": "Info",
+	  "log_level_code": 3,
+		"details": 
+			"(97) ----------
+			01-53-15.135 PM | Info | StoreController | Starting with id1
+			(3) ----------
+			01-53-15.138 PM | Info | StoreController | Finished
+			( 36) ----------",
+	  "durations": {
+			"value": [97, 3, 36],
+			"total": 143
 	  },
-	  "route": {
-		"template": "{controller}/{id}",
-		"controller": "store",
-		"action": null,
-		"values": {
-		  "controller": "store",
-		  "id": "1"
+	  "logger": ["StoreController"],
+	  "http": {
+		"request": {
+		  "uri": "http://localhost:61523/store/1",
+		  "http_method": "GET",
+		  "headers": {
+			"connection": ["keep-alive"],
+			"accept": ["text/html","application/xhtml+xml","application/xml; q=0.9","image/webp","*/*; q=0.8"],
+			"accept-encoding": ["gzip","deflate","sdch","br"],
+			"accept-language": ["ru-RU","ru; q=0.8","en-US; q=0.6","en; q=0.4","uk; q=0.2"],
+			"host": ["localhost:61523"],
+			"user-agent": ["Mozilla/5.0","(Windows NT 10.0; WOW64)","AppleWebKit/537.36","(KHTML, like Gecko)","Chrome/57.0.2987.133","Safari/537.36"],
+			"upgrade-insecure-requests": ["1"]
+		  },
+		  "route": {
+			"template": "{controller}/{id}",
+			"controller": "store",
+			"action": null,
+			"values": {
+			  "controller": "store",
+			  "id": "1"
+			}
+		  }
+		},
+		"response": {
+		  "status": 200,
+		  "headers": {
+			"correlation-id": ["Examples.WebApi-d7f77795-d25a-46a1-8a8b-7dbe57f7ed9f"],
+			"content-type": ["application/xml; charset=utf-8"]
+		  }
 		}
-	  }
-	},
-	"response": {
-	  "status": 200,
-	  "headers": {
-		"correlation-id": ["Examples.WebApi-d7f77795-d25a-46a1-8a8b-7dbe57f7ed9f"],
-		"content-type": ["application/xml; charset=utf-8"]
+	  },
+	  "host": {
+		"name": "LT-214809",
+		"ip": ["10.0.48.58"]
+	  },
+	  "application_version": "1.0.0.0",
+	  "logs": {
+		"version": "1.0.0.0",
+		"drop_count": 0,
+		"retry_count": 0,
+		"length": 1501
 	  }
 	}
-  },
-  "host": {
-	"name": "LT-214809",
-	"ip": ["10.0.48.58"]
-  },
-  "application_version": "1.0.0.0",
-  "logs": {
-	"version": "1.0.0.0",
-	"drop_count": 0,
-	"retry_count": 0,
-	"length": 1501
-  }
 }
 ```
 
