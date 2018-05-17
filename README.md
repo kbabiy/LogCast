@@ -656,7 +656,7 @@ This behavior can be changed with next setting:
 LogCastContext.Current.SuppressEmtpyContextMessages = true
 ```
 
-## Authors
+## Credits
 
 - **Konstantin Babiy** - main contributor and current  owner
 - **Kirill Medvedev** - originally introduced the idea and started the project
