@@ -6,8 +6,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("LogCast.Tracing")]
 [assembly: AssemblyDescription(".Net tracing TraceListener to send logs through LogCast")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("24-7 Entertainment")]
-[assembly: AssemblyCopyright("Copyright 24-7 Entertainment 2016")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -15,5 +15,5 @@ using System.Runtime.InteropServices;
 [assembly: Guid("efd79198-2609-4d29-8cd5-aa56c50544c5")]
 [assembly: InternalsVisibleTo("LogCast.Tracing.Test")]
 
-[assembly: AssemblyVersion("8.2.0")]
-[assembly: AssemblyFileVersion("8.2.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
