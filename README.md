@@ -479,8 +479,10 @@ but operation context async flow is now disabled by default. To enable it (and u
 For case of standalone configuration or when selected logging framework doesn't support the fallback logging mechanism, file fallback logger 
 is provided
 
-In order to enable this functionality use 'FallbackLogDirectory' option when configuring your logging setup. This can be both absolute or relative director path.
-In case relative path is used it is being rooted to '{Path.GetTempPath()}\LogCastTemp'
+In order to enable this functionality use 'FallbackLogDirectory' option when configuring your logging setup. 
+
+This directory can be both absolute or relative path. Environment variables are also resolved
+In case relative path (after environment variables resolution) is found it is being rooted to '{Path.GetTempPath()}\LogCastTemp'
 
 Base directory of an applicaion is not used in order to avoid unexpected side effects on the client application
 

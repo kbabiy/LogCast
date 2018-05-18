@@ -34,6 +34,7 @@ namespace LogCast.Fallback
             _cleanup = cleanup;
             try
             {
+                fallbackDir = Environment.ExpandEnvironmentVariables(fallbackDir);
                 //removing filename if any
                 if (Path.HasExtension(Path.GetFileName(fallbackDir)))
                     fallbackDir = Path.GetDirectoryName(fallbackDir);
@@ -101,7 +102,7 @@ namespace LogCast.Fallback
                 ++_failureCount;
             }
         }
-        
+
         protected internal virtual void EnsureDirectoryExists()
         {
             if (!Directory.Exists(_dir))
@@ -130,9 +131,9 @@ namespace LogCast.Fallback
 
         public bool Flush(TimeSpan timeout)
         {
-            return _writer != null 
-                && timeout.TotalMilliseconds > 0 
-                && _writer.FlushAsync().Wait(timeout);
+            return _writer != null
+                   && timeout.TotalMilliseconds > 0
+                   && _writer.FlushAsync().Wait(timeout);
         }
 
         private IEnumerable<FileInfo> ListLogs()
@@ -143,7 +144,8 @@ namespace LogCast.Fallback
 
         internal static string GetFileName(string directory, DateTime date)
         {
-            return Path.Combine(directory, $"{date.ToString(FileNameDateFormat, CultureInfo.InvariantCulture)}{LogFileSuffix}");
+            return Path.Combine(directory,
+                $"{date.ToString(FileNameDateFormat, CultureInfo.InvariantCulture)}{LogFileSuffix}");
         }
 
         internal static DateTime? GetLogFileDate(FileInfo file)
@@ -151,7 +153,8 @@ namespace LogCast.Fallback
             var name = file.Name;
             var dateString = name.Substring(0, name.Length - LogFileSuffix.Length);
 
-            return DateTime.TryParseExact(dateString, FileNameDateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out var result)
+            return DateTime.TryParseExact(dateString, FileNameDateFormat, CultureInfo.InvariantCulture,
+                DateTimeStyles.None, out var result)
                 ? result
                 : (DateTime?) null;
         }

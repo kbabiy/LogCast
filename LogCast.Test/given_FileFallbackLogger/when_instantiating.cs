@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using BddStyle.NUnit;
 using Moq;
 using NUnit.Framework;
 
@@ -51,6 +53,20 @@ namespace LogCast.Test.given_FileFallbackLogger
             InitSut(inputDirectory);
             SutMock.Object.Write("message");
             SutMock.Verify(l => l.AppendFallbackFile(It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+        }
+
+        [TestKind(Kinds.Integration)]
+        [Test]
+        public void then_environment_variable_is_resolved()
+        {
+            Environment.SetEnvironmentVariable("fallback_root", @"C:\GIT");
+
+            InitSut(@"%fallback_root%\dir");
+            SutMock.Object.Write("message");
+            SutMock.Verify(l => l.AppendFallbackFile(It.IsAny<string>(),
+                    It.Is<string>(path => Path.GetDirectoryName(path) == @"C:\GIT\dir")),
+                Times.Once);
+
         }
     }
 }
