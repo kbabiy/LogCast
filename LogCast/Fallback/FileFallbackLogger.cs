@@ -34,7 +34,8 @@ namespace LogCast.Fallback
             _cleanup = cleanup;
             try
             {
-                fallbackDir = Environment.ExpandEnvironmentVariables(fallbackDir);
+                fallbackDir = Cleanup(fallbackDir);
+
                 //removing filename if any
                 if (Path.HasExtension(Path.GetFileName(fallbackDir)))
                     fallbackDir = Path.GetDirectoryName(fallbackDir);
@@ -101,6 +102,22 @@ namespace LogCast.Fallback
             {
                 ++_failureCount;
             }
+        }
+
+        private static string Cleanup(string input)
+        {
+            input = Environment.ExpandEnvironmentVariables(input);
+            var invalid = new HashSet<char>(Path.GetInvalidPathChars())
+            {
+                '%'//to flatten non-resolved environment variables
+            };
+
+            var filtered = input
+                .Where(c => !invalid.Contains(c))
+                .ToArray();
+
+            var result = new string(filtered);
+            return result;
         }
 
         protected internal virtual void EnsureDirectoryExists()

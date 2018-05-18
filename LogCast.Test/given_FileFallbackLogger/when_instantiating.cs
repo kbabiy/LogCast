@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
-using BddStyle.NUnit;
 using Moq;
 using NUnit.Framework;
 
@@ -20,6 +19,7 @@ namespace LogCast.Test.given_FileFallbackLogger
                 yield return new TestCaseData("dir\\", $"{BaseDir}\\dir").SetName("'dir\\' is prefixed with root");
                 yield return new TestCaseData("dir", $"{BaseDir}\\dir").SetName("'dir' is prefixed with root");
                 yield return new TestCaseData("dir\\file.txt", $"{BaseDir}\\dir").SetName("directory is prefixed with root, filename is skipped");
+                yield return new TestCaseData("%nonexisting%\\dir\\", $"{BaseDir}\\nonexisting\\dir").SetName("non-existing environment variable is flattenned out");
                 yield return new TestCaseData("C:\\dir", "C:\\dir").SetName("rooted 'dir' is taken as is");
                 yield return new TestCaseData("C:\\dir\\", "C:\\dir").SetName("rooted 'dir\\' is taken as is");
                 yield return new TestCaseData("C:\\dir\\file.txt", "C:\\dir").SetName("rooted directory is taken, filename skipped");
@@ -55,7 +55,6 @@ namespace LogCast.Test.given_FileFallbackLogger
             SutMock.Verify(l => l.AppendFallbackFile(It.IsAny<string>(), It.IsAny<string>()), Times.Never);
         }
 
-        [TestKind(Kinds.Integration)]
         [Test]
         public void then_environment_variable_is_resolved()
         {
@@ -66,7 +65,6 @@ namespace LogCast.Test.given_FileFallbackLogger
             SutMock.Verify(l => l.AppendFallbackFile(It.IsAny<string>(),
                     It.Is<string>(path => Path.GetDirectoryName(path) == @"C:\GIT\dir")),
                 Times.Once);
-
         }
     }
 }
