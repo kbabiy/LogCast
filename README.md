@@ -1,4 +1,8 @@
-# LogCast
+LogCast
+=======
+
+[![Build status](https://ci.appveyor.com/api/projects/status/40m9iy34i2nbjkgg?svg=true)](https://ci.appveyor.com/project/kbabiy/logcast)
+[![NuGet Version](https://img.shields.io/nuget/v/LogCast.svg?style=flat)](https://www.nuget.org/packages/LogCast/)
 
 ## Intro
 
