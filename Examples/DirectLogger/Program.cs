@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using LogCast;
 using LogCast.Loggers.Direct;
 using JetBrains.Annotations;
+using LogCast.Delivery;
 
 namespace Examples.DirectLogger
 {
@@ -14,10 +15,16 @@ namespace Examples.DirectLogger
 
         static void Main()
         {
-            //Configuring from App.config
-            LogConfig.Configure(new DirectLogManager());
+            LogConfig.Configure(
+                new DirectLogManager(
+                    new DirectLoggerOptions(LogLevel.Info, "LogCastPoc")
+                    {
+                        Layout = "{date:hh-mm-ss.fff tt} | {level} | {logger} | {message}",
+                        FallbackLogDirectory = @"C:\log\fallback"
+                    },
+                    new LogCastOptions("http://wkelk.westus.cloudapp.azure.com:9200")));
 
-            Operation();
+            new Scenarios().Start();
 
             //Let the logs sending complete
             LogManager.Flush(TimeSpan.FromMinutes(1));

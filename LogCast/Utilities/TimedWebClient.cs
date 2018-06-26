@@ -13,6 +13,7 @@ namespace LogCast.Utilities
         }
 
         private readonly int _timeout;
+
         public TimedWebClient(int timeout)
         {
             _timeout = timeout;
@@ -21,10 +22,13 @@ namespace LogCast.Utilities
         protected override WebRequest GetWebRequest(Uri uri)
         {
             var request = (HttpWebRequest)base.GetWebRequest(uri);
+
             if (request != null)
             {
+                request.ContentType = "application/json";
                 request.Timeout = _timeout;
             }
+
             return request;
         }
     }

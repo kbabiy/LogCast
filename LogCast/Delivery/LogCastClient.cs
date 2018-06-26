@@ -82,10 +82,7 @@ namespace LogCast.Delivery
 
         private Uri GetEndpoint()
         {
-            const string version = "01";
-            const string indexPrefix = "elastic-" + version;
-
-            return new Uri($"{_options.Endpoint}/{indexPrefix}-{DateTime.UtcNow:yyyy.MM.dd}/logs/");
+            return new Uri($"{_options.Endpoint}logstash-{DateTime.UtcNow:yyyy.MM.dd}/logs/{Guid.NewGuid()}");
         }
 
         [SuppressMessage("ReSharper", "EmptyGeneralCatchClause")]
