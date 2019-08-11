@@ -33,10 +33,9 @@ namespace LogCast.Utilities
 
         public bool WaitUntil(int targetValue, TimeSpan howLong)
         {
-            // When TimeSpan.MaxValue is specified then TotalMilliseconds will be more than int.MaxValue
-            var checkInterval = howLong.TotalMilliseconds <= 0 
-                ? 0 
-                : (howLong.TotalMilliseconds > int.MaxValue ? int.MaxValue : (int)howLong.TotalMilliseconds / 20);
+            var checkInterval = howLong <= TimeSpan.Zero ? TimeSpan.Zero
+                : new TimeSpan(howLong.Ticks / 16);
+
             var sw = Stopwatch.StartNew();
             lock (_counterChangeLock)
             {
