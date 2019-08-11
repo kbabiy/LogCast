@@ -4,7 +4,7 @@ using FluentAssertions;
 using Moq;
 using NUnit.Framework;
 
-namespace LogCast.Test.given_LogCastClient.given_send_mocked.and_message_sent.and_ConsumeDocument_fails_on_send
+namespace LogCast.Test.given_LogCastClient.and_send_mocked.and_message_sent.and_ConsumeDocument_fails_on_send
 {
     public class when_sending : Context
     {

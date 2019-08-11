@@ -2,7 +2,7 @@
 using LogCast.Engine;
 using NUnit.Framework;
 
-namespace LogCast.Test.given_LogCastClient.given_send_mocked.and_message_sent.and_document_factory_mocked
+namespace LogCast.Test.given_LogCastClient.and_send_mocked.and_message_sent.and_document_factory_mocked
 {
     public class when_seding_message : Context
     {

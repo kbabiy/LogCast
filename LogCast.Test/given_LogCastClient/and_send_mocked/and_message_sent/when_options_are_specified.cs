@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 
-namespace LogCast.Test.given_LogCastClient.given_send_mocked.and_message_sent
+namespace LogCast.Test.given_LogCastClient.and_send_mocked.and_message_sent
 {
     public class when_options_are_specified : Context
     {

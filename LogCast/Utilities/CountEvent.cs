@@ -44,7 +44,7 @@ namespace LogCast.Utilities
                     Monitor.Wait(_counterChangeLock, checkInterval);
                 }
 
-                return _counter <= targetValue;
+                return _counter < targetValue;
             }
         }
     }

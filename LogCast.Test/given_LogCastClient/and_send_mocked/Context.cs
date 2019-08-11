@@ -7,7 +7,7 @@ using LogCast.Engine;
 using LogCast.Fallback;
 using Moq;
 
-namespace LogCast.Test.given_LogCastClient.given_send_mocked
+namespace LogCast.Test.given_LogCastClient.and_send_mocked
 {
     public abstract class Context : ContextBase
     {

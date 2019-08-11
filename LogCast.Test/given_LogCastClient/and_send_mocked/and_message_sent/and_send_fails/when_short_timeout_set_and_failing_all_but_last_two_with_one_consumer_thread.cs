@@ -4,7 +4,7 @@ using FluentAssertions;
 using Moq;
 using NUnit.Framework;
 
-namespace LogCast.Test.given_LogCastClient.given_send_mocked.and_message_sent.and_send_fails
+namespace LogCast.Test.given_LogCastClient.and_send_mocked.and_message_sent.and_send_fails
 {
     public class when_short_timeout_set_and_failing_all_but_last_two_with_one_consumer_thread : Context
     {

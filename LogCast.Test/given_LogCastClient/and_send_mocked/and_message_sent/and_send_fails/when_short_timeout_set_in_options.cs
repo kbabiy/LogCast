@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 
-namespace LogCast.Test.given_LogCastClient.given_send_mocked.and_message_sent.and_send_fails
+namespace LogCast.Test.given_LogCastClient.and_send_mocked.and_message_sent.and_send_fails
 {
     public class when_short_timeout_set_in_options : Context
     {

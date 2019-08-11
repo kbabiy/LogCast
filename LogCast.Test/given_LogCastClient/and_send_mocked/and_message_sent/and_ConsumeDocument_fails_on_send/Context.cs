@@ -4,9 +4,9 @@ using LogCast.Delivery;
 using LogCast.Fallback;
 using Moq;
 
-namespace LogCast.Test.given_LogCastClient.given_send_mocked.and_message_sent.and_ConsumeDocument_fails_on_send
+namespace LogCast.Test.given_LogCastClient.and_send_mocked.and_message_sent.and_ConsumeDocument_fails_on_send
 {
-    public abstract class Context : given_send_mocked.Context
+    public abstract class Context : and_send_mocked.Context
     {
         protected const string TestMessage = "test_error_call";
         protected Mock<IFallbackLogger> LoggerMock;

@@ -4,7 +4,7 @@ using LogCast.Delivery;
 using LogCast.Fallback;
 using Moq;
 
-namespace LogCast.Test.given_LogCastClient.given_send_mocked.and_message_sent.and_send_fails
+namespace LogCast.Test.given_LogCastClient.and_send_mocked.and_message_sent.and_send_fails
 {
     public abstract class Context : and_message_sent.Context
     {
@@ -18,7 +18,7 @@ namespace LogCast.Test.given_LogCastClient.given_send_mocked.and_message_sent.an
 
         protected virtual int FailCount => 1;
 
-        class FailingLogCastClientMock : LogCastClientMock
+        class FailingLogCastClientMock : and_send_mocked.Context.LogCastClientMock
         {
             private readonly int _failedCount;
             private int _cnt;
