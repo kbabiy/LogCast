@@ -11,19 +11,17 @@ namespace LogCast.Test.given_CountEvent
     public class when_adding_then_decreasing : Context
     {
         private int _countAfterAdding;
+        private bool _decreaseWaitSuccess;
 
         public override void Act()
         {
-            var tasks = Enumerable.Range(0, ThreadCount).Select(
-                i => Task.Factory.StartNew(Sut.Increase)).ToArray();
-            Task.WaitAll(tasks, TimeSpan.FromSeconds(10));
+            var increases = StartIncreases();
+            Task.WaitAll(increases, TimeSpan.FromSeconds(10));
             _countAfterAdding = Sut.Count;
 
-            Enumerable.Range(0, ThreadCount).Select(
-                i => Task.Factory.StartNew(Sut.Decrease))
-                .ToArray();
+            StartDecreases();
 
-            Sut.WaitUntil(0, TimeSpan.FromSeconds(10));
+            _decreaseWaitSuccess = Sut.WaitUntil(0, TimeSpan.FromSeconds(10));
         }
 
         [Test]
@@ -33,7 +31,13 @@ namespace LogCast.Test.given_CountEvent
         }
 
         [Test]
-        public void then_after_wait_for_decrease_count_is_zero()
+        public void then_decrease_wait_is_successful()
+        {
+            _decreaseWaitSuccess.Should().BeTrue();
+        }
+
+        [Test]
+        public void then_after_decrease_count_is_zero()
         {
             Sut.Count.Should().Be(0);
         }

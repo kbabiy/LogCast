@@ -2,7 +2,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LogCast.Test.given_LogCastClient.given_send_mocked
+namespace LogCast.Test.given_LogCastClient.and_send_mocked
 {
     public class when_sending_message : Context
     {

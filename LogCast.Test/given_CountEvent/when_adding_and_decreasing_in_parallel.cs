@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace LogCast.Test.given_CountEvent
@@ -12,20 +11,15 @@ namespace LogCast.Test.given_CountEvent
         [SuppressMessage("ReSharper", "ReturnValueOfPureMethodIsNotUsed")]
         public override void Act()
         {
-            Enumerable.Range(0, ThreadCount).Select(
-                i => Task.Factory.StartNew(Sut.Increase))
-                .ToArray();
+            StartIncreases();
             Thread.Sleep(100);
-
-            Enumerable.Range(0, ThreadCount).Select(
-                i => Task.Factory.StartNew(Sut.Decrease))
-                .ToArray();
+            StartDecreases();
         }
 
         [Test]
         public void then_wait_is_successful()
         {
-            Sut.WaitUntil(0, TimeSpan.FromSeconds(10));
+            Sut.WaitUntil(0, TimeSpan.FromSeconds(10)).Should().BeTrue();
         }
     }
 }

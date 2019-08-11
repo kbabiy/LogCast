@@ -5,6 +5,9 @@ using JetBrains.Annotations;
 
 namespace LogCast.Utilities
 {
+    /// <summary>
+    /// Registers Increase and Decrease call counts and allows waiting the count to reach 0 
+    /// </summary>
     [UsedImplicitly(ImplicitUseTargetFlags.Members)]
     public class CountEvent
     {
@@ -44,7 +47,7 @@ namespace LogCast.Utilities
                     Monitor.Wait(_counterChangeLock, checkInterval);
                 }
 
-                return _counter < targetValue;
+                return _counter <= targetValue;
             }
         }
     }
