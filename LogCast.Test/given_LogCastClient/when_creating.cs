@@ -6,7 +6,7 @@ using LogCast.Fallback;
 using Moq;
 using NUnit.Framework;
 
-namespace LogCast.Test.given_LogCastClient.given_type
+namespace LogCast.Test.given_LogCastClient
 {
     [SuppressMessage("ReSharper", "ObjectCreationAsStatement")]
     [SuppressMessage("ReSharper", "AssignNullToNotNullAttribute")]

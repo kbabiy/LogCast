@@ -4,7 +4,7 @@ using FluentAssertions;
 using LogCast.Delivery;
 using NUnit.Framework;
 
-namespace LogCast.Test.given_LogCastClient.given_options
+namespace LogCast.Test.given_LogCastClient
 {
     public class when_creating_with_default_values : ContextBase
     {

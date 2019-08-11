@@ -200,7 +200,7 @@
     <Compile Include="given_LogCastDocument\given_document_with_fields\when_getting_unexisting_field.cs" />
     <Compile Include="given_LogCastDocument\given_type\when_getting_object_from_int_set.cs" />
     <Compile Include="given_LogCastDocument\given_type\when_instantiating.cs" />
-    <Compile Include="given_LogCastClient\given_options\when_creating_with_default_values.cs" />
+    <Compile Include="given_LogCastClient\when_creating_with_default_values.cs" />
     <Compile Include="given_LogCastClient\given_send_mocked\and_message_sent\and_send_fails\when_too_many_messages.cs" />
     <Compile Include="given_LogCastClient\given_send_mocked\and_message_sent\and_send_fails\when_long_retry_timeout_set_in_options.cs" />
     <Compile Include="given_LogCastClient\given_send_mocked\and_message_sent\and_send_fails\when_short_timeout_set_in_options.cs" />
@@ -221,7 +221,7 @@
     <Compile Include="given_PropertyAccumulator_when_applied\with_adding_unique_properties_with_aggregators.cs" />
     <Compile Include="given_PropertyAccumulator_when_applied\with_adding_unique_properties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="given_LogCastClient\given_type\when_creating.cs" />
+    <Compile Include="given_LogCastClient\when_creating.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LogCast\LogCast.csproj">
