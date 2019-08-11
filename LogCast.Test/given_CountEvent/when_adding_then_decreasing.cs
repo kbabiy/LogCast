@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using System.Threading.Tasks;
 using FluentAssertions;
 using NUnit.Framework;
 
 namespace LogCast.Test.given_CountEvent
 {
-    [SuppressMessage("ReSharper", "ReturnValueOfPureMethodIsNotUsed")]
     public class when_adding_then_decreasing : Context
     {
         private int _countAfterAdding;

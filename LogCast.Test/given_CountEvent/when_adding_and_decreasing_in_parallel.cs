@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using FluentAssertions;
 using NUnit.Framework;
@@ -8,7 +7,6 @@ namespace LogCast.Test.given_CountEvent
 {
     public class when_adding_and_decreasing_in_parallel : Context
     {
-        [SuppressMessage("ReSharper", "ReturnValueOfPureMethodIsNotUsed")]
         public override void Act()
         {
             StartIncreases();
