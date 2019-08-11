@@ -23,7 +23,7 @@ namespace LogCast.Test.given_CountEvent
         }
 
         [Test]
-        public void then_wait_is_successfull()
+        public void then_wait_is_successful()
         {
             Sut.WaitUntil(0, TimeSpan.FromSeconds(10));
         }

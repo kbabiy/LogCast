@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace LogCast.Test.given_CountEvent
 {
-    public class when_decreasing_withouth_add : Context
+    public class when_decreasing_without_add : Context
     {
         [Test]
         public void then_no_error()

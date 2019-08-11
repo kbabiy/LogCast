@@ -92,7 +92,7 @@
     <Compile Include="given_CountEvent\when_not_0_and_adding_consuming_often.cs" />
     <Compile Include="given_CountEvent\when_adding_and_decreasing_in_parallel.cs" />
     <Compile Include="given_CountEvent\when_waiting_without_changing_counter.cs" />
-    <Compile Include="given_CountEvent\when_decreasing_withouth_add.cs" />
+    <Compile Include="given_CountEvent\when_decreasing_without_add.cs" />
     <Compile Include="given_CountEvent\Context.cs" />
     <Compile Include="given_CountEvent\when_adding_then_decreasing.cs" />
     <Compile Include="given_DeleteOldFilesDaily\and_ran\and_days_to_keep_files_defaulted\Context.cs" />
