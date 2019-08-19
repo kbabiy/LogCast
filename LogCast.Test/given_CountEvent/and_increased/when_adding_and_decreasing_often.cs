@@ -5,14 +5,13 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace LogCast.Test.given_CountEvent
+namespace LogCast.Test.given_CountEvent.and_increased
 {
-    public class when_not_0_and_adding_decreasing_often : Context
+    public class when_adding_and_decreasing_often : Context
     {
         [SuppressMessage("ReSharper", "FunctionNeverReturns")]
         public override void Act()
         {
-            Sut.Increase();
             Task.Factory.StartNew(() =>
                     {
                         while (true)

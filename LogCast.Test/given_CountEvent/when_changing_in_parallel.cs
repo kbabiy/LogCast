@@ -5,7 +5,7 @@ using NUnit.Framework;
 
 namespace LogCast.Test.given_CountEvent
 {
-    public class when_adding_and_decreasing_in_parallel : Context
+    public class when_changing_in_parallel : Context
     {
         public override void Act()
         {

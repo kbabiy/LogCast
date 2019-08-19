@@ -89,11 +89,12 @@
     <Compile Include="given_ContextSummaryBuilder\OrdinalLogMessage.cs" />
     <Compile Include="given_ContextSummaryBuilder\when_adding_informational_messages.cs" />
     <Compile Include="given_ContextSummaryBuilder\when_adding_message_with_null_original.cs" />
-    <Compile Include="given_CountEvent\when_increased_and_waiting.cs" />
-    <Compile Include="given_CountEvent\when_increasing_only.cs" />
-    <Compile Include="given_CountEvent\when_not_0_and_adding_decreasing_often.cs" />
-    <Compile Include="given_CountEvent\when_adding_and_decreasing_in_parallel.cs" />
-    <Compile Include="given_CountEvent\when_waiting_without_changing_counter.cs" />
+    <Compile Include="given_CountEvent\and_increased\Context.cs" />
+    <Compile Include="given_CountEvent\and_increased\when_waiting.cs" />
+    <Compile Include="given_CountEvent\and_increased\when_ran.cs" />
+    <Compile Include="given_CountEvent\and_increased\when_adding_and_decreasing_often.cs" />
+    <Compile Include="given_CountEvent\when_changing_in_parallel.cs" />
+    <Compile Include="given_CountEvent\when_waiting_on_unchanged.cs" />
     <Compile Include="given_CountEvent\when_decreasing_below_zero.cs" />
     <Compile Include="given_CountEvent\Context.cs" />
     <Compile Include="given_CountEvent\when_adding_then_decreasing.cs" />
